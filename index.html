@@ -113,9 +113,9 @@
     display: flex; align-items: center; gap: 12px;
     margin-bottom: 1.75rem;
     padding-bottom: 1.25rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(0,0,0,0.12);
   }
-  .panel-title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+  .panel-title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: #000; }
   .panel-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; background: var(--surface2); color: var(--text2); border: 1px solid var(--border-med); }
 
   /* Steps */
@@ -123,16 +123,16 @@
   .step {
     display: flex; gap: 16px; align-items: flex-start;
     padding: 14px 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(0,0,0,0.10);
   }
   .step:last-child { border-bottom: none; }
   .step-num {
-    font-size: 11px; font-weight: 700; color: var(--text3);
+    font-size: 11px; font-weight: 700; color: rgba(0,0,0,0.35);
     min-width: 22px; padding-top: 2px;
     letter-spacing: 0.04em;
   }
-  .step-text { font-size: 13px; color: var(--text2); line-height: 1.65; }
-  .step-text strong { color: var(--text); font-weight: 500; }
+  .step-text { font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.65; }
+  .step-text strong { color: #000; font-weight: 500; }
   .step-text code {
     font-family: 'SF Mono', 'Fira Code', monospace;
     font-size: 12px; background: var(--surface2);
@@ -154,17 +154,25 @@
 
   /* Notes box */
   .notes-box {
-    background: var(--green-bg);
-    border: 1px solid rgba(110,231,183,0.15);
+    background: var(--surface);
+    border: 1px solid var(--border-med);
     border-radius: var(--radius);
     padding: 1.25rem 1.5rem;
     margin-top: 1.5rem;
   }
-  .notes-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); margin-bottom: 0.75rem; }
+  .notes-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text2); margin-bottom: 0.75rem; }
   .notes-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
   .notes-list li { font-size: 13px; color: var(--text2); line-height: 1.6; padding-left: 16px; position: relative; }
   .notes-list li::before { content: '—'; position: absolute; left: 0; color: var(--text3); }
   .notes-list li strong { color: var(--text); font-weight: 500; }
+
+  /* Tema oscuro: restaurar colores originales para panel y steps */
+  [data-theme="dark"] .panel-header{border-color:var(--border)!important}
+  [data-theme="dark"] .panel-title{color:var(--text)!important}
+  [data-theme="dark"] .step{border-color:var(--border)!important}
+  [data-theme="dark"] .step-num{color:var(--text3)!important}
+  [data-theme="dark"] .step-text{color:var(--text2)!important}
+  [data-theme="dark"] .step-text strong{color:var(--text)!important}
 
   /* Empty state */
   .empty-state {
